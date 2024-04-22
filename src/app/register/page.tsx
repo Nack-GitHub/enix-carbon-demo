@@ -33,6 +33,10 @@ function RegisterPage({ }: Props) {
   const [openEmailVerification, setOpenEmailVerification] = useState('')
   const [openPinModal, setOpenPinModal] = useState(false)
 
+  const [branch, setBranch] = useState(0)
+  const [register, setRegister] = useState(0)
+  const [addressContact, setAddressContact] = useState(0)
+
   useEffect(() => {
     if (status === "authenticated") {
       router.push(ROUTE_PATH.MARKET)
@@ -256,8 +260,8 @@ function RegisterPage({ }: Props) {
                         </div>
                         <div className='flex flex-col'>
                           <Typography variant='small' className='text-blue-gray-900 font-semibold'>สำนักงาน<span className='text-red-500'>*</span></Typography>
-                          <Radio className='' iconProps={{ className: 'h-2' }} label="สำนักงานใหญ่" />
-                          <Radio className='' iconProps={{ className: 'h-2' }} label="สาขา" />
+                          <Radio className='' label="สำนักงานใหญ่" checked={branch === 1} onChange={() => setBranch(1)} />
+                          <Radio className='' label="สาขา" checked={branch === 2} onChange={() => setBranch(2)} />
                           <Input
                             className="!border-t-blue-gray-200 focus:!border-t-green-500"
                             placeholder='สาขาที่'
@@ -267,8 +271,8 @@ function RegisterPage({ }: Props) {
                         </div>
                         <div className='flex flex-col'>
                           <Typography variant='small' className='text-blue-gray-900 font-semibold'>จดทะเบียน<span className='text-red-500'>*</span></Typography>
-                          <Radio className='' iconProps={{ className: 'h-2' }} label="ไทย" />
-                          <Radio className='' iconProps={{ className: 'h-2' }} label="อื่น ๆ" />
+                          <Radio className='' label="ไทย" checked={register === 1} onChange={() => setRegister(1)} />
+                          <Radio className='' label="อื่น ๆ" checked={register === 2} onChange={() => setRegister(2)} />
                           <Input
                             className="!border-t-blue-gray-200 focus:!border-t-green-500"
                             placeholder='อื่น ๆ'
@@ -359,8 +363,8 @@ function RegisterPage({ }: Props) {
                         </div>
                         <div className='flex flex-col'>
                           <Typography variant='small' className='text-blue-gray-900 font-semibold'>ที่อยู่ที่ติดต่อได้</Typography>
-                          <Radio className='' iconProps={{ className: 'h-2' }} label="เหมือน ที่อยู่ตามหนังสือรับรอง" />
-                          <Radio className='' iconProps={{ className: 'h-2' }} label="ไม่เหมือน ที่อยู่ตามหนังสือรับรอง" />
+                          <Radio className='' label="เหมือน ที่อยู่ตามหนังสือรับรอง" checked={addressContact === 1} onChange={() => setAddressContact(1)} />
+                          <Radio className='' label="ไม่เหมือน ที่อยู่ตามหนังสือรับรอง" checked={addressContact === 2} onChange={() => setAddressContact(2)} />
                         </div>
                         <Button>
                           ยืนยัน
