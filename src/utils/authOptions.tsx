@@ -53,7 +53,7 @@ export const authOptions: AuthOptions = {
         },
         async redirect({ url, baseUrl }: any) {
             // console.log("redirect - url ", url, "baseUrl >>>", baseUrl);
-            return `${baseUrl + ROUTE_PATH.MARKET}`
+            return `${process.env.NEXTAUTH_URL + ROUTE_PATH.MARKET}`
         }
     },
     secret: process.env.NEXTAUTH_SECRET
