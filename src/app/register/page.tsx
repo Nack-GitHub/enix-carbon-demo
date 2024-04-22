@@ -366,7 +366,7 @@ function RegisterPage({ }: Props) {
                           <Radio className='' label="เหมือน ที่อยู่ตามหนังสือรับรอง" checked={addressContact === 1} onChange={() => setAddressContact(1)} />
                           <Radio className='' label="ไม่เหมือน ที่อยู่ตามหนังสือรับรอง" checked={addressContact === 2} onChange={() => setAddressContact(2)} />
                         </div>
-                        <Button>
+                        <Button onClick={() => router.replace('/')}>
                           ยืนยัน
                         </Button>
                       </div>
