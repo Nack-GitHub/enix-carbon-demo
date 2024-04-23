@@ -280,6 +280,7 @@ function RegisterPage({ }: Props) {
                               className: "hidden",
                             }} />
                         </div>
+
                         <div className='flex flex-col gap-2'>
                           <Typography variant='small' className='text-blue-gray-900 font-semibold'>เลขทะเบียนนิติบุคคล / เลขประจำตัวผู้เสียภาษีอากร<span className='text-red-500'>*</span></Typography>
                           <Input
